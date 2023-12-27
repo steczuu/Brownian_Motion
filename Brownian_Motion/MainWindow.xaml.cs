@@ -23,8 +23,10 @@ namespace BrownianMotion
     {
         int UserInput;
         float x, y, s, fi;
+        string pointNumber;
         double[] dataX;
         double[] dataY;
+        string[] label;
 
         public MainWindow()
         {
@@ -39,16 +41,18 @@ namespace BrownianMotion
             int NumberOfMoves = UserInput;
             x = 0; y = 0;
 
+
             for (int i = 0; i < NumberOfMoves; i++)
             {
                 fi = (float)(rnd.NextDouble() * 2 * PI);
                 x = x + (float)Math.Sin(fi);
                 y = y + (float)Math.Cos(fi);
 
+                label = new string[] { i.ToString() };
                 dataX = new double[] { x };
                 dataY = new double[] { y };
 
-                NewPlot.Plot.AddScatter(dataX, dataY);
+                NewPlot.Plot.AddScatter(dataX, dataY).DataPointLabels = label;
                 NewPlot.Refresh();
             }
             s = (float)Math.Sqrt(x * x + y * y);
