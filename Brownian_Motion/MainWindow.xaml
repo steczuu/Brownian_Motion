@@ -6,25 +6,35 @@
         xmlns:local="clr-namespace:BrownianMotion"
         xmlns:ScottPlot="clr-namespace:ScottPlot;assembly=ScottPlot.WPF"
         mc:Ignorable="d"
-        Title="Brownian movement" Height="450" Width="800" Background="White">
+        Title="Brownian movement" Height="550" Width="800" Background="White">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0,2*"/>
             <RowDefinition Height="0,7*"/>
+            <RowDefinition Height="0,1*"/>
         </Grid.RowDefinitions>
 
 
-        <TextBlock Text="Pass the number of moves:" FontSize="18" Margin="5,5,5,5" Height="30" Width="220" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0"/>
-        <TextBlock FontSize="18" Margin="50,5,5,5" Height="85" Width="300" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="0" Name="S_Val"/>
-        <TextBlock FontSize="18" Margin="50,5,5,5" Height="85" Width="300" VerticalAlignment="Top" HorizontalAlignment="Center" 
-                   Grid.Row="0" Name="ErrorMsg" Foreground="Red"/>
+        <TextBlock Text="Pass the number of moves:" FontSize="18" Margin="5,5,5,5" Height="30" Width="220" HorizontalAlignment="Left" 
+                   VerticalAlignment="Top" Grid.Row="0"/>
+        <TextBlock FontSize="18" Margin="0,5,5,5" Height="85" Width="300" VerticalAlignment="Top" HorizontalAlignment="Center" 
+                   Grid.Row="0" Name="S_Val" TextAlignment="Center"/>
+        <TextBlock FontSize="18" Margin="0,5,5,5" Height="85" Width="300" VerticalAlignment="Top" HorizontalAlignment="Center" 
+                   Grid.Row="0" Name="ErrorMsg" Foreground="Red" TextAlignment="Center"/>
+        <TextBlock FontSize="18" Margin="0,5,5,5" Height="35" Width="300" VerticalAlignment="Top" HorizontalAlignment="Center" 
+                    Grid.Row="2" Name="SaveStatus" Foreground="Green" TextAlignment="Center"/>
 
         <TextBox Height="30" Width="150" Grid.Row="0" HorizontalAlignment="Left" Margin="5,5,5,5" Name="UserInputTxt"/>
+        <TextBox Height="30" Width="150" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Top" 
+                 Margin="5,5,80,5" Name="FileNameInput"/>
 
         <Button Height="30" Width="70" HorizontalAlignment="Left" Margin="160,5,5,5" Click="SaveInput">Pass</Button>
-        <Button Height="30" Width="70" Click="CalculateBtn" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5,5,5,5" Name="CalculateButton">Draw</Button>
+        <Button Height="30" Width="70" Click="CalculateBtn" HorizontalAlignment="Right" VerticalAlignment="Top" 
+                Margin="5,5,5,5" Name="CalculateButton">Draw</Button>
         <Button Height="30" Width="70" Click="Reset" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5,40,5,5">Reset</Button>
+        <Button Height="30" Width="70" Click="Save" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5,5,5,5" 
+                Name="SaveBtn" Grid.Row="2">Save</Button>
 
-        <ScottPlot:WpfPlot x:Name="NewPlot" Grid.Row="1"/>
+        <ScottPlot:WpfPlot x:Name="NewPlot" x:FieldModifier="public" Grid.Row="1"/>
     </Grid>
 </Window>

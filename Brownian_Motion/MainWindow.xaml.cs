@@ -1,6 +1,9 @@
-﻿using ScottPlot;
+﻿using Brownian_Motion;
+using Microsoft.Win32;
+using ScottPlot;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +17,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+
 namespace BrownianMotion
 {
     /// <summary>
@@ -23,10 +28,9 @@ namespace BrownianMotion
     {
         int UserInput;
         float x, y, s, fi;
-        string pointNumber;
-        double[] dataX;
-        double[] dataY;
+        double[] dataX,dataY;
         string[] label;
+        string FileName;
 
         public MainWindow()
         {
@@ -87,6 +91,23 @@ namespace BrownianMotion
             dataY = new double[] { 0 };
             fi = 0;
             NewPlot.Plot.Clear();
+        }
+
+        private void Save(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                FileName = FileNameInput.Text;
+
+                SaveStatus.Text = "File saved successfully!";
+                NewPlot.Plot.SaveFig(FileName + ".png");
+            }
+            catch (Exception)
+            {
+                SaveStatus.Text = "Something went wrong, try again!";
+                SaveStatus.Foreground = Brushes.Red;
+                throw;
+            }
         }
     }
 }
