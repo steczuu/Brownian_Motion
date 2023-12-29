@@ -39,6 +39,7 @@ namespace BrownianMotion
 
         private void CalculateBtn(object sender, RoutedEventArgs e)
         {
+            SaveStatus.Text = "";
             Random rnd = new Random();
 
             float PI = 3.14159f;
@@ -68,6 +69,7 @@ namespace BrownianMotion
 
         private void SaveInput(object sender, RoutedEventArgs e)
         {
+            SaveStatus.Text = "";
             try
             {
                 UserInput = int.Parse(UserInputTxt.Text);
