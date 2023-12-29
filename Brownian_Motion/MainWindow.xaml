@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:BrownianMotion"
         xmlns:ScottPlot="clr-namespace:ScottPlot;assembly=ScottPlot.WPF"
         mc:Ignorable="d"
-        Title="Brownian movement" Height="550" Width="800" Background="White">
+        Title="Brownian movement" Height="600" Width="800" Background="White" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0,2*"/>
@@ -34,6 +34,10 @@
         <Button Height="30" Width="70" Click="Reset" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5,40,5,5">Reset</Button>
         <Button Height="30" Width="70" Click="Save" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5,5,5,5" 
                 Name="SaveBtn" Grid.Row="2">Save</Button>
+        <Button Height="45" Width="70" Click="RedirectToGithub" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,5,5" 
+                Name="GithubRedirectBtn" Grid.Row="2" ToolTip="Check out the project on GitHub!" Background="White" BorderBrush="White">
+            <Image Source="/Images/github-mark.png"></Image>
+        </Button>
 
         <ScottPlot:WpfPlot x:Name="NewPlot" x:FieldModifier="public" Grid.Row="1"/>
     </Grid>

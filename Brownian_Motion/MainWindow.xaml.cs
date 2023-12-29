@@ -3,6 +3,7 @@ using Microsoft.Win32;
 using ScottPlot;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -111,6 +112,12 @@ namespace BrownianMotion
                 SaveStatus.Foreground = Brushes.Red;
                 throw;
             }
+        }
+
+        private void RedirectToGithub(object sender, RoutedEventArgs e)
+        {
+            string Project_url = "https://github.com/steczuu/Brownian_Motion";
+            Process.Start(new ProcessStartInfo("cmd", $"/c start {Project_url}") { CreateNoWindow = true });
         }
     }
 }
