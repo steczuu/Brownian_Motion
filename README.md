@@ -1,7 +1,8 @@
 # Brownian Motion
 A simple app that simulates brownian motion.
 
-![image](https://github.com/steczuu/Brownian_Motion/assets/135137767/33f519b8-e50a-4ac0-9168-448eb3018338)
+![image](https://github.com/steczuu/Brownian_Motion/assets/135137767/58dbed3d-8e7e-4bf1-9835-4e90f2b2cadc)
+
 
 
 ## Usage:
@@ -14,7 +15,9 @@ A simple app that simulates brownian motion.
 - Use right click on graph for additional options
 
 ## Example:
-![image](https://github.com/steczuu/Brownian_Motion/assets/135137767/b62b703e-4273-47c8-b28b-211a35175e70)
+![image](https://github.com/steczuu/Brownian_Motion/assets/135137767/4a63aca0-6ed2-4472-872a-4f135be2e5c3)
+
+
 
 
 
