@@ -85,6 +85,7 @@ namespace BrownianMotion
             CalculateButton.IsEnabled = true;
             S_Val.Text = "";
             UserInputTxt.Text = "";
+            SaveStatus.Text = "";
             x = 0;
             y = 0;
             dataX = new double[] { 0 };
